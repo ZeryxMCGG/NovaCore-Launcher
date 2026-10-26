@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novacore Launcher - Yeni Nesil Minecraft Başlatıcısı</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand">
+                <img src="assets/logo.png" alt="Novacore Logo" class="brand-logo">
+                <span class="brand-text">NOVACORE</span>
+                <span class="brand-tag">v1.5.0</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link" data-i18n="nav_features">Özellikler</a></li>
+                <li><a href="#mods" class="nav-link" data-i18n="nav_mods">Mod Merkezi</a></li>
+                <li><a href="#specs" class="nav-link" data-i18n="nav_specs">Gereksinimler</a></li>
+                <li><a href="#faq" class="nav-link" data-i18n="nav_faq">S.S.S.</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="btnLang" class="btn-lang">🌐 TR</button>
+                <a href="#download" class="btn-nav-download" data-i18n="nav_download">İndir</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-badge" data-i18n="hero_badge">
+                ✨ v1.5.0 Resmi Yayın • Mojang 26.2+ & Fabric Hazır
+            </div>
+            <h1 class="hero-title" data-i18n="hero_title">
+                Minecraft Dünyanızı <span class="gradient-text">Özgürleştirin</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">
+                Ultra hızlı Prism çekirdeği, yerleşik Modrinth & CurseForge mod indiricisi, Mojang doğrudan Piston CDN bağlantısı ve kesintisiz mod motoru.
+            </p>
+
+            <div class="hero-cta">
+                <a href="downloads/NovacoreLauncher_Setup.exe" class="btn-primary" download>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span data-i18n="btn_download_setup">Kurulumu İndir (.exe)</span>
+                </a>
+                <a href="../Files" class="btn-secondary" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                    <span data-i18n="btn_download_zip">Taşınabilir Sürüm (.zip)</span>
+                </a>
+            </div>
+
+            <div class="hero-meta">
+                <span data-i18n="hero_meta_os">Windows 10 / 11 (64-Bit)</span>
+                <span>•</span>
+                <span data-i18n="hero_meta_license">Ücretsiz & Açık Mimari</span>
+                <span>•</span>
+                <span data-i18n="hero_meta_version">Sürüm: 1.5.0</span>
+            </div>
+
+            <!-- APP INTERACTIVE MOCKUP -->
+            <div class="mockup-container">
+                <div class="mockup-window">
+                    <div class="mockup-titlebar">
+                        <div class="titlebar-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="titlebar-title">
+                            <img src="assets/logo.png" width="16" height="16" alt="logo">
+                            Novacore Launcher v1.5.0 [Mojang 26.2+ & Fabric]
+                        </div>
+                        <div class="titlebar-status">
+                            ⚡ Canlı (Mojang Bağlı)
+                        </div>
+                    </div>
+
+                    <div class="mockup-content">
+                        <!-- SIDEBAR -->
+                        <div class="mockup-sidebar">
+                            <div class="sidebar-nav">
+                                <div class="mockup-nav-item active">🚀 Profiller (Instances)</div>
+                                <div class="mockup-nav-item">➕ Yeni Profil Ekle</div>
+                                <div class="mockup-nav-item">🧩 Modlar (Modrinth / CurseForge)</div>
+                                <div class="mockup-nav-item">👤 Hesaplar</div>
+                                <div class="mockup-nav-item">⚙️ Ayarlar</div>
+                                <div class="mockup-nav-item">📜 Konsol / Loglar</div>
+                            </div>
+                            <div class="sidebar-user">
+                                <div class="user-tag">Aktif Oyuncu</div>
+                                <div class="user-name">MyusufY [Offline]</div>
+                            </div>
+                        </div>
+
+                        <!-- MAIN VIEW -->
+                        <div class="mockup-main">
+                            <div class="main-header">
+                                <div class="main-title">
+                                    <h3>Minecraft Profilleri</h3>
+                                    <p>Oynamak istediğiniz profili seçin veya doğrudan modlu başlatın</p>
+                                </div>
+                                <button class="mockup-btn-primary">➕ Yeni Profil</button>
+                            </div>
+
+                            <div class="instances-grid">
+                                <!-- CARD 1 -->
+                                <div class="instance-card">
+                                    <div class="inst-title">26.2 (Fabric Modlu)</div>
+                                    <span class="inst-badge badge-fabric">Fabric 0.16.10</span>
+                                    <div class="inst-meta">
+                                        <span>4096 MB RAM</span>
+                                        <span>3 Mod Aktif</span>
+                                    </div>
+                                    <div class="inst-actions">
+                                        <button class="btn-play-mini">▶ OYNA</button>
+                                        <button class="btn-mods-mini">🧩 Modlar</button>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 2 -->
+                                <div class="instance-card">
+                                    <div class="inst-title">Yeni Macera 26.3</div>
+                                    <span class="inst-badge badge-fabric">Mojang Snapshot</span>
+                                    <div class="inst-meta">
+                                        <span>3072 MB RAM</span>
+                                        <span>Vanilla + Opt</span>
+                                    </div>
+                                    <div class="inst-actions">
+                                        <button class="btn-play-mini">▶ OYNA</button>
+                                        <button class="btn-mods-mini">🧩 Modlar</button>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 3 -->
+                                <div class="instance-card">
+                                    <div class="inst-title">Novacore Modern 1.21.1</div>
+                                    <span class="inst-badge badge-vanilla">Release 1.21.1</span>
+                                    <div class="inst-meta">
+                                        <span>4096 MB RAM</span>
+                                        <span>Fabric Ready</span>
+                                    </div>
+                                    <div class="inst-actions">
+                                        <button class="btn-play-mini">▶ OYNA</button>
+                                        <button class="btn-mods-mini">🧩 Modlar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" data-i18n="features_tag">GÜÇLÜ MİMARİ</div>
+                <h2 class="section-title" data-i18n="features_title">Neden Novacore Launcher?</h2>
+                <p class="section-desc" data-i18n="features_desc">Gereksiz ağırlıklardan arındırılmış, oyuncular ve mod severler için özel olarak inşa edilmiş yeni nesil başlatıcı.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- F1 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">⚡</div>
+                    <h3 class="feature-title" data-i18n="f1_title">Resmi Mojang Piston CDN</h3>
+                    <p class="feature-desc" data-i18n="f1_desc">Mojang'ın resmi manifestosundan 26.2, 26.3, 1.21.1 ve klasik sürümleri ışık hızında indirin. Snapshot desteği dahil.</p>
+                    <div class="feature-badge-row">
+                        <span class="feature-pill">Piston CDN</span>
+                        <span class="feature-pill">Snapshots</span>
+                    </div>
+                </div>
+
+                <!-- F2 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🧩</div>
+                    <h3 class="feature-title" data-i18n="f2_title">Modrinth & CurseForge Merkezi</h3>
+                    <p class="feature-desc" data-i18n="f2_desc">Client içerisinden tek tıkla mod arayın. Otomatik sürüm filtresi sayesinde Minecraft sürümünüzle %100 uyumlu modlar kurulur.</p>
+                    <div class="feature-badge-row">
+                        <span class="feature-pill">Modrinth API</span>
+                        <span class="feature-pill">CurseForge</span>
+                    </div>
+                </div>
+
+                <!-- F3 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">⚙️</div>
+                    <h3 class="feature-title" data-i18n="f3_title">Fabric & Mod Enjeksiyonu</h3>
+                    <p class="feature-desc" data-i18n="f3_desc">KnotClient motoru ile Sodium, Iris, Mod Menu gibi popüler optimizasyon modlarını sıfır yapılandırmayla çalıştırın.</p>
+                    <div class="feature-badge-row">
+                        <span class="feature-pill">KnotClient</span>
+                        <span class="feature-pill">SpongeMixin</span>
+                    </div>
+                </div>
+
+                <!-- F4 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🔄</div>
+                    <h3 class="feature-title" data-i18n="f4_title">Tek Tıkla Tüm Modları Güncelle</h3>
+                    <p class="feature-desc" data-i18n="f4_desc">Profilinizdeki kurulu modları akıllıca tarar ve hedef sürümünüzle uyumlu en son sürümlere anında eşitler.</p>
+                    <div class="feature-badge-row">
+                        <span class="feature-pill">Akıllı Eşitleme</span>
+                        <span class="feature-pill">Otomatik Temizleme</span>
+                    </div>
+                </div>
+
+                <!-- F5 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🚀</div>
+                    <h3 class="feature-title" data-i18n="f5_title">Prism Performans Çekirdeği</h3>
+                    <p class="feature-desc" data-i18n="f5_desc">Java 8'den Java 25'e kadar otomatik algılama, minimum RAM/CPU tüketimi ve maksimum oyun içi FPS artışı.</p>
+                    <div class="feature-badge-row">
+                        <span class="feature-pill">Java 8 - 25</span>
+                        <span class="feature-pill">Yüksek FPS</span>
+                    </div>
+                </div>
+
+                <!-- F6 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🛡️</div>
+                    <h3 class="feature-title" data-i18n="f6_title">Dahili Upgrader & Veri Koruma</h3>
+                    <p class="feature-desc" data-i18n="f6_desc">Uygulama içi yükseltici ile güncel kalın; kaldırırken veya güncellerken profillerinizi ve modlarınızı koruyun.</p>
+                    <div class="feature-badge-row">
+                        <span class="feature-pill">Preserve Data</span>
+                        <span class="feature-pill">Upgrader .exe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOD SECTION SHOWCASE -->
+    <section id="mods" class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="mod-showcase">
+                <div>
+                    <div class="section-tag" data-i18n="mod_section_tag">SINIRSIZ ÖZELLEŞTİRME</div>
+                    <h2 class="section-title" data-i18n="mod_section_title">Mod İndirmek Hiç Bu Kadar Kolay Olmamıştı</h2>
+                    <p class="section-desc" style="text-align: left; margin: 0 0 24px 0;" data-i18n="mod_section_desc">Web tarayıcılarında sürüm aramakla vakit kaybetmeyin. Novacore Launcher, profilinizin sürümünü algılar ve doğrudan çalışan modları sunar.</p>
+
+                    <div class="mod-logos-row">
+                        <div class="brand-badge badge-modrinth">
+                            <img src="assets/modrinth.png" alt="Modrinth">
+                            Modrinth Verified
+                        </div>
+                        <div class="brand-badge badge-curseforge">
+                            <img src="assets/curseforge.png" alt="CurseForge">
+                            CurseForge Network
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mod-list-preview">
+                    <!-- Sodium -->
+                    <div class="mod-item-mockup">
+                        <div class="mod-item-info">
+                            <img src="https://cdn.modrinth.com/data/AANobbMI/icon.png" alt="Sodium">
+                            <div>
+                                <div class="mod-item-name">Sodium</div>
+                                <div class="mod-item-sub">mc26.2 • OpenGL Engine • 38.5M İndirme</div>
+                            </div>
+                        </div>
+                        <span class="mod-status-badge">✓ Yüklü</span>
+                    </div>
+
+                    <!-- Mod Menu -->
+                    <div class="mod-item-mockup">
+                        <div class="mod-item-info">
+                            <img src="https://cdn.modrinth.com/data/mOgUt4GM/icon.png" alt="Mod Menu">
+                            <div>
+                                <div class="mod-item-name">Mod Menu</div>
+                                <div class="mod-item-sub">v20.0.3 • Oyun İçi Arayüz • 35.2M İndirme</div>
+                            </div>
+                        </div>
+                        <span class="mod-status-badge">✓ Yüklü</span>
+                    </div>
+
+                    <!-- Fabric API -->
+                    <div class="mod-item-mockup">
+                        <div class="mod-item-info">
+                            <img src="https://cdn.modrinth.com/data/P7dR8mSH/icon.png" alt="Fabric API">
+                            <div>
+                                <div class="mod-item-name">Fabric API</div>
+                                <div class="mod-item-sub">0.161.0+26.2 • Temel Mod Kütüphanesi</div>
+                            </div>
+                        </div>
+                        <span class="mod-status-badge">✓ Yüklü</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECS TABLE -->
+    <section id="specs" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">SİSTEM ÖZELLİKLERİ</div>
+                <h2 class="section-title">Sistem Gereksinimleri</h2>
+                <p class="section-desc">Novacore Launcher, her seviyedeki bilgisayarda akıcı çalışacak şekilde optimize edilmiştir.</p>
+            </div>
+
+            <div style="max-width: 850px; margin: 0 auto;">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Bileşen</th>
+                            <th>Minimum Gereksinim</th>
+                            <th>Önerilen Yapılandırma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>İşletim Sistemi</strong></td>
+                            <td>Windows 10 (64-Bit)</td>
+                            <td>Windows 11 (64-Bit En Güncel)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>İşlemci (CPU)</strong></td>
+                            <td>Intel Core i3 / AMD FX Serisi</td>
+                            <td>Intel Core i5 / AMD Ryzen 5 veya üstü</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bellek (RAM)</strong></td>
+                            <td>2 GB Tahsis (Min)</td>
+                            <td>4 GB - 8 GB Tahsis (Modlu Oyunlar İçin)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Java Sürümü</strong></td>
+                            <td>Java 8 veya Java 17</td>
+                            <td>Java 21 / Java 25 (Otomatik Algılanır)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ekran Kartı</strong></td>
+                            <td>OpenGL 3.3 Uyumlu GPU</td>
+                            <td>NVIDIA RTX / AMD Radeon (OpenGL 4.5+)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag" data-i18n="faq_tag">MERAK EDİLENLER</div>
+                <h2 class="section-title" data-i18n="faq_title">Sıkça Sorulan Sorular</h2>
+            </div>
+
+            <div class="faq-container">
+                <!-- Q1 -->
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span data-i18n="faq_q1">Novacore Launcher tamamen ücretsiz mi?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq_a1">
+                        Evet! Novacore Launcher tamamen ücretsizdir. Hiçbir gizli ücret, reklam veya kısıtlama içermez.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq_q2">Modlar sürümümle uyumlu iner mi?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq_a2">
+                        Kesinlikle. Akıllı sürüm ve yükleyici filtresi sayesinde örneğin Minecraft 26.2 Fabric oynuyorsanız, sadece 26.2 Fabric için üretilen modlar indirilir.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq_q3">Android sürümü var mı?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq_a3">
+                        Hayır. Novacore Launcher, masaüstü bilgisayarlarda en yüksek performansı ve gelişmiş Java optimizasyonunu sağlamak için yalnızca Windows PC platformuna odaklanmıştır.
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span data-i18n="faq_q4">Kaldırırken veya güncellerken kayıtlı dünyalarım silinir mi?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq_a4">
+                        Hayır. Dahili Ayarlar menüsünde bulunan 'Veri Koruma (Preserve Data)' özelliği sayesinde tüm profilleriniz, dünyalarınız ve modlarınız güvende kalır.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD SECTION -->
+    <section id="download" class="section">
+        <div class="container">
+            <div class="download-card">
+                <h2 data-i18n="dl_card_title">Hemen İndirin ve Oynamaya Başlayın</h2>
+                <p data-i18n="dl_card_desc">Saniyeler içinde kurun, profilinizi oluşturun ve Mojang'ın en son sürümlerinde modlu Minecraft'ın keyfini çıkarın.</p>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <a href="downloads/NovacoreLauncher_Setup.exe" class="btn-primary" download>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        <span data-i18n="btn_download_setup">Kurulumu İndir (.exe)</span>
+                    </a>
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 18px;">
+                    NovacoreLauncher_Setup.exe (v1.5.0) • Windows 10/11 64-Bit Uyumlu
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand">
+                    <img src="assets/logo.png" alt="Novacore Logo" class="brand-logo">
+                    <span class="brand-text">NOVACORE</span>
+                </div>
+                <div data-i18n="footer_copy">
+                    © 2026 Novacore Launcher. Tüm hakları saklıdır.
+                </div>
+            </div>
+            <div class="footer-disclaimer" data-i18n="footer_disclaimer">
+                Novacore Launcher, Mojang AB veya Microsoft ile bağlantılı değildir. Minecraft, Mojang Synergies AB'nin tescilli ticari markasıdır.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
