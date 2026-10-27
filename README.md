@@ -22,7 +22,7 @@
 
 Bu depo, **Novacore Launcher**'ın resmi vitrin ve doğrudan indirme web sitesini barındırır.
 
-- **Canlı Önizleme:** GitHub Pages üzerinden 7/24 ücretsiz, hızlı ve SSL korumalı olarak yayınlanır.
+- **Canlı Önizleme:** [https://zeryxmcgg.github.io/NovaCore-Launcher/](https://zeryxmcgg.github.io/NovaCore-Launcher/)
 - **İki Dil Desteği:** 🇹🇷 Türkçe ve 🇬🇧 İngilizce dilleri arasında tek tıkla dinamik geçiş.
 - **Dahili Kurulum İndiricisi:** En güncel `NovacoreLauncher_Setup.exe` dosyasını doğrudan sunar.
 - **Modern Tasarım:** Glassmorphism, karanlık neon teması, interaktif başlatıcı maketi ve akordeon S.S.S.
@@ -43,8 +43,8 @@ Bu depo, **Novacore Launcher**'ın resmi vitrin ve doğrudan indirme web sitesin
 
 | Dosya | Boyut | Açıklama |
 | :--- | :--- | :--- |
-| **[NovacoreLauncher_Setup.exe](downloads/NovacoreLauncher_Setup.exe)** | ~200 KB | Hızlı kurulum sihirbazı (Masaüstü kısayolu ile) |
-| **Portatif Sürüm** | Klasör | Kurulum gerektirmeyen taşınabilir sürüm |
+| **[NovacoreLauncher_Setup.exe](downloads/NovacoreLauncher_Setup.exe)** | ~60 MB | Self-contained kurulum sihirbazı (.NET 10 gerektirmez) |
+| **[NovaCoreLauncher_Portable.zip](downloads/NovaCoreLauncher_Portable.zip)** | ~60 MB | Kurulum gerektirmez, zip'i açıp `NovacoreLauncher.exe` çalıştırın |
 
 ---
 
